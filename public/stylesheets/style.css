@@ -1,0 +1,10 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+.successlog{background-color:#e0f9e0;color:#4ba04b;border-radius: 3px;height: 30px;line-height: 30px; margin:8px 0;text-indent:16px;font-weight:700;}
+.errorlog{background-color:#ffdede;color:#a04b4b;border-radius: 3px;height: 30px;line-height: 30px; margin:8px 0;text-indent:16px;font-weight:700;}

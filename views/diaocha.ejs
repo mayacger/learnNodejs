@@ -1,0 +1,39 @@
+<% include header %>
+<div id="container" class="container">
+	<div class="hero-unit">
+		<p><a class="btn btn-primary btn-large" href="#" data-btn="creatques">创建调查</a></p>
+	</div>
+	<ul data-item="ques">
+		
+	</ul>
+</div>
+<% include fnend %>
+<script>
+	var Fillin ="<span><input type='text' value='填空题名称'></input><input type='text' value=''></input></span>";
+	var creatagain = "<a href='javascript:;' data-btn='creatFill' class='btn btn-primary btn-small' style='display:none;'>继续添加</a>";
+	var ques ={
+		//创建
+		creatque:function(sele){
+			$("[data-btn='creatques']").click(function(){
+				ques.apendlist(sele);
+			});
+		},
+		
+		//插入问题
+		apendlist:function(sele){
+			$("[data-item='ques']").append("<li>"+sele+"</li>");
+			$("[data-item='ques'] li").append(creatagain);
+			$("[data-item='ques'] li").find("[data-btn='creatFill']").click(function(){
+					$(this).parent().append(sele);
+			});
+			$("[data-item='ques'] li").hover(function(){
+				$(this).find("[data-btn='creatFill']").show();
+			},function(){
+
+			});
+		}
+	};
+	ques.creatque(Fillin);
+	
+</script>
+<% include footer %>
